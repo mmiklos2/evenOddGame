@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>EvenOdd</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="/css/main.css"/>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-md navbar-light" style="background-color: #007bff; display: none">
+    <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#"><img src="images/logo.png" alt="GAME LOGO"/></a>
+            </li>
+        </ul>
+    </div>
+    <div class="mx-auto order-0">
+        <a class="navbar-brand mx-auto" href="#"><span id="player1">Player 1</span> <span id="score">0:0</span> <span id="player2">Player 2</span></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+    <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" id="stopPlaying">Stop playing</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div id="username-page">
+    <div class="username-page-container">
+        <form id="usernameForm" name="usernameForm">
+            <div class="form-group">
+                <label for="name">Username:</label>
+                <input type="text" id="name" th:value="${username}" autocomplete="off" class="form-control"/>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="accent username-submit">Start chatting</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="container-fluid hidden" id="gameArea">
+    <div id="opponentsPlay" class="text-center">
+        <img src="images/bigone.png" alt="missing"/>
+    </div>
+    <div id="yourPlay" class="text-center">
+        <ul class="list-inline">
+            <li class="list-inline-item"><img src="images/smallone.png" alt="0"/></li>
+            <li class="list-inline-item"><img src="images/smallone.png" alt="1"/></li>
+            <li class="list-inline-item"><img src="images/smallone.png" alt="0"/></li>
+            <li class="list-inline-item"><img src="images/smallone.png" alt="1"/></li>
+            <li class="list-inline-item"><img src="images/smallone.png" alt="0"/></li>
+            <li class="list-inline-item"><img src="images/smallone.png" alt="1"/></li>
+        </ul>
+    </div>
+</div>
+<div id="chat-page" class="hidden container-fluid h-100">
+    <div class="chat-container">
+        <div class="chat-header">
+            <h2>EvenOdd chat</h2>
+        </div>
+        <div class="connecting">
+            Waiting for opponent...
+        </div>
+        <ul id="messageArea">
+
+        </ul>
+        <form id="messageForm" name="messageForm" nameForm="messageForm">
+            <div class="form-group">
+                <div class="input-group clearfix">
+                    <input type="text" id="message" placeholder="Type a message..." autocomplete="off"
+                           class="form-control"/>
+                    <button type="submit" class="primary">Send</button>
+                    <button id="playButton" class="primary">Play</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.4/sockjs.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+<script src="/js/main.js"></script>
+</body>
+</html>

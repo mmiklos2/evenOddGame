@@ -1,0 +1,25 @@
+spring:
+  profiles:
+    active: test
+
+
+server:
+  port: 8080
+
+---
+spring:
+  profiles: test
+  datasource:
+    url: jdbc:mysql://localhost:3306/EvenOdd?autoReconnect=true&useSSL=false&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    username: root
+    password: password
+    driver-class-name: com.mysql.jdbc.Driver
+  thymeleaf:
+    cache: false
+  jpa:
+    hibernate:
+      ddl-auto: none
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+        strategy: org.hibernate.cfg.EJB3NamingStrategy
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyJpaCompliantImpl

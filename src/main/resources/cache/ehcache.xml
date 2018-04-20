@@ -1,0 +1,18 @@
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.ehcache.org/ehcache.xsd" updateCheck="true" monitoring="autodetect" dynamicConfig="true">
+	<cache name="loggedUser"
+		   maxBytesLocalHeap="50m"
+		   timeToLiveSeconds="7200"/>
+	<cache name="reason"
+		   maxBytesLocalHeap="50m"
+		   timeToLiveSeconds="7200"/>
+	<cache name="reasons"
+		   maxBytesLocalHeap="50m"
+		   timeToLiveSeconds="7200"/>
+	<cache name="event"
+		   maxBytesLocalHeap="50m"
+		   timeToLiveSeconds="7200"/>
+	<cache name="events"
+		   maxBytesLocalHeap="50m"
+		   timeToLiveSeconds="7200"/>
+      <sizeOfPolicy maxDepth="10000" maxDepthExceededBehavior="abort"/>
+</ehcache>

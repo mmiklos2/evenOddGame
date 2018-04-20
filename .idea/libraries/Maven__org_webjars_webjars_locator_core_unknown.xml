@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.webjars:webjars-locator-core:unknown">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/webjars/webjars-locator-core/unknown/webjars-locator-core-unknown.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/webjars/webjars-locator-core/unknown/webjars-locator-core-unknown-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/webjars/webjars-locator-core/unknown/webjars-locator-core-unknown-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
