@@ -14,7 +14,10 @@ GRANT ALL ON * TO 'root'@'localhost';
 CREATE TABLE `admin` (
   `adminID` int UNSIGNED NOT NULL auto_increment primary key,
   `username` varchar(40) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `password` varchar(30) NOT NULL
+  `password` varchar(60) NOT NULL,
+  `publicKey` TEXT(266),
+  `personalAES` TEXT (500),
+  `initializationVector` varchar(500)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 ALTER TABLE `admin`

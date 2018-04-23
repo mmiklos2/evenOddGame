@@ -25,5 +25,14 @@ public class Admin {
     @Column(name = "password")
     private String password;
 
+    @Column(name = "personalAES")
+    private String personalAES;
+
+    @Column(name = "publicKey")
+    private String publicKey;
+
+    @Column(name = "initializationVector")
+    private String initializationVector;
+
 }
 

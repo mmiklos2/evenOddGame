@@ -62,13 +62,18 @@
     Logout success.
 </div>
 
-<form th:action="@{/login}" class="form-signin" method="post">
+<form th:action="@{/login}" class="form-signin" method="post" id="loginForm">
     <h2 class="form-signin-heading">Log in</h2>
-    <input type="text" name="username" id="username" class="form-control" placeholder="Username" />
-    <input type="password" name="password" id="password" class="form-control" placeholder="Password" />
+    <input type="text" name="username" id="username" class="form-control" placeholder="Username" th:required="true" pattern="^[a-zA-Z0-9_]*$"/>
+    <input type="password" name="password" id="password" class="form-control" placeholder="Password" th:required="true" pattern="^[a-zA-Z0-9_]*$"/>
     <br/><br/>
     <button class="btn btn-lg btn-primary btn-block" id="submit" value="Sign In" type="submit">Log in</button>
 </form>
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
 
 
 </body>

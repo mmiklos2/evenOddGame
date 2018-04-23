@@ -19,7 +19,8 @@ public class ChatMessage {
         LEAVE,
         SCORE,
         START,
-        QUIT
+        QUIT,
+        PKEY
     }
 
 }

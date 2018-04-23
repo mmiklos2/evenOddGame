@@ -7,6 +7,7 @@ import net.miklos.evenodd.repository.AdminRepository;
 import net.miklos.evenodd.repository.GameRepository;
 import net.miklos.evenodd.service.GameService;
 import net.miklos.evenodd.util.Utilities;
+import net.miklos.evenodd.util.encryption.RSAUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -27,6 +28,7 @@ public class GameServiceImpl implements GameService {
 
     @Override
     public ChatMessage updateGameState(ChatMessage chatMessage) {
+        chatMessage = Utilities.decryptChatMessage(chatMessage, adminRepository);
         Admin participatingPlayer = adminRepository.findByUserName(chatMessage.getSender());
         Game currentGame = gameRepository.findCurrentGame(participatingPlayer);
         String SENDER = "server";
